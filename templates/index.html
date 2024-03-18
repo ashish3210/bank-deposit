@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Expense</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body style="background: rgb(252, 250, 250);">
+  <div class="login">
+   <h1 style="text-align:center">Bank Deposite Prediction</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <label for="age" colo>Age:  </label>
+      <input type="text" name="age" placeholder="age" required="required">
+      <br>
+      <br>
+      <label for="balance">Balance:  </label>
+      <input type="text" name="balance" placeholder="balance" required="required">
+      <br>
+      <br>
+      <label for="day">Day:  </label>
+      <input type="text" name="day", placeholder="day", required="required">
+      <br>
+      <br> duration, campaign, PDays, previous
+      <label for="duration">Duration:  </label>
+      <input type="text" name="duration", placeholder="duration", required="required">
+      <br>
+      <br>
+      <label for="campaign">Campaign:  </label>
+      <input type="text" name="campaign", placeholder="campaign", required="required">
+      <br>
+      <br>
+      <label for="PDays">PDays:  </label>
+      <input type="text" name="PDays", placeholder="PDays", required="required">
+      <br>
+      <br>
+      <label for="previous">Previous:  </label>
+      <input type="text" name="previous", placeholder="previous", required="required">
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Deposite</button>
+    </form>
+    <br>
+    <br>
+    <h2>
+    {{ prediction_text }}
+    </h2>
+  </div>
+</body>
+</html>
